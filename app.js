@@ -15,3 +15,13 @@ app.use("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+// Get all users
+app.get("/api/users", async (req, res) => {
+  const users = await getUsers();
+  res.json({
+    success: true,
+    payload: users,
+  });
+});
+

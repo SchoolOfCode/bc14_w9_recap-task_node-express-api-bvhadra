@@ -3,12 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 
 const fileName = "users.json";
 
-export async function getUsers() {}
+export async function getUsers() {
+  const data = await fs.readFile(fileName);
+  return JSON.parse(data);
+}
 
-export async function getUserByID(id) {}
 
-export async function createUser(newUser) {}
 
-export async function updateUserByID(id, updatedUser) {}
-
-export async function deleteUserByID(id) {}
